@@ -24,7 +24,7 @@ export default function PokemonList({ id, name }: PokemonListProps) {
   const isFavorite = favorites.some((fav) => fav.name === name);
   const handleFavoriteToggle = async () => {
     if (isFavorite) {
-      removeFavorite(id);
+      removeFavorite(name);
     } else {
       if (!favorites.some((fav) => fav.id === id)) {
         const pokemonDetails = await getPokemonDetails(name);

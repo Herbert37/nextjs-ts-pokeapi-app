@@ -5,7 +5,7 @@ import { persist } from "zustand/middleware";
 interface FavoriteStore {
   favorites: Pokemon[];
   addFavorite: (pokemon: Pokemon) => void;
-  removeFavorite: (pokemonId: number) => void;
+  removeFavorite: (pokemonName: string) => void;
 }
 
 export const useFavorites = create<FavoriteStore>()(
@@ -21,9 +21,11 @@ export const useFavorites = create<FavoriteStore>()(
             favorites: [...state.favorites, pokemon],
           };
         }),
-      removeFavorite: (pokemonId) =>
+      removeFavorite: (pokemonName: string) =>
         set((state) => ({
-          favorites: state.favorites.filter((pokemon) => pokemon.id !== pokemonId),
+          favorites: state.favorites.filter(
+            (pokemon) => pokemon.name !== pokemonName
+          ),
         })),
     }),
     { name: "favorites-storage" }
