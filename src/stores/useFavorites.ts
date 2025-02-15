@@ -9,7 +9,7 @@ interface FavoriteStore {
 }
 
 export const useFavorites = create<FavoriteStore>()(
-  persist(
+  persist<FavoriteStore>(
     (set) => ({
       favorites: [],
       addFavorite: (pokemon: Pokemon) =>
