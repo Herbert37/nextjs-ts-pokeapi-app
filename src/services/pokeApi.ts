@@ -9,7 +9,7 @@ export const getRegions = async (): Promise<Region[]> => {
 
 export const getPokemonsByRegion = async (
   regionName: string
-): Promise<(NamedAPIResource & { id: number })[]> => {
+) => {
   const { data } = await axios.get<{ pokedexes: NamedAPIResource[] }>(
     `${API_URL}/region/${regionName}`
   );
@@ -21,7 +21,7 @@ export const getPokemonsByRegion = async (
   }>(data.pokedexes[0].url);
 
   return pokedex.pokemon_entries.map((entry) => ({
-    ...entry.pokemon_species,
+    name: entry.pokemon_species.name,
     id: entry.entry_number,
   }));
 };
