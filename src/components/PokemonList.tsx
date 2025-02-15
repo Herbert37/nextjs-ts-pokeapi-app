@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, Grid, IconButton } from "@mui/material";
 import { useState } from "react";
-import PokemonDetailsModal from "./PokemonDetailsModal";
+import PokemonModal from "./PokemonModal";
 import { useFavorites } from "@/stores/useFavorites";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -54,7 +54,7 @@ export default function PokemonList({ id, name }: PokemonListProps) {
           />
         </Card>
       </Grid>
-      <PokemonDetailsModal
+      <PokemonModal
         key={`${name}-modal`}
         showModal={showModal}
         handleCloseModal={handleCloseModal}

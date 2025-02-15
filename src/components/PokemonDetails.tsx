@@ -10,7 +10,11 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function PokemonDetails({ pokemon }: Pokemon) {
+interface PokemonDetailsProps {
+  pokemon: Pokemon;
+}
+
+export default function PokemonDetails({ pokemon }: PokemonDetailsProps) {
   return (
     <Container
       sx={{

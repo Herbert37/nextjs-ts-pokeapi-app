@@ -5,10 +5,7 @@ import {
   Container,
   Modal,
   Typography,
-  CircularProgress,
-  CardContent,
-  Card,
-  Grid,
+  CircularProgress
 } from "@mui/material";
 import { getPokemonDetails } from "@/services/pokeApi";
 import { Pokemon } from "@/types/pokemon";
